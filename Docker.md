@@ -178,4 +178,44 @@ Instead of using image:alpine lets use the version, so in future it can be chang
 ### Tagging Override
 
 `$ docker tag myapp-api:latest myapp-api:1`
-This will create another image with tag 1 but both have the save funtionality.
+This will create another image with tag 1 but both have the save funtionality. Now lets modify any code and build the image with 'latest' tag. then tag another image (same as before) as tag:2. Now we have 3 images, latest, 1 and 2. lets spin all three images. latest and 2 are the same but with tag 1 is the previous version.
+
+
+## Docker Registry
+The Registry is a stateless, highly scalable server side application that stores and lets you distribute Docker images. The Registry is open-source, under the permissive Apache license. [read more](https://docs.docker.com/registry/)
+
+Here are few registry:
+- Docker Hub
+- quay.io
+- Amazon ECR
+
+docker hub is popular one, lets create an account and then login. Now go to Repositories and create new repository.
+
+`$ docker tag myapp:1 dockerusername/myapp:1`
+Once done, login to your docker hub with your username and password. You can do it by clicking on docker desktop logo or from terminal:
+`$ docker login` then type username and password
+
+Now push your local image to docker hub, run:
+`$ docker push yourdockerusername/myapp:1`
+
+Check your repository, its listed there. Now you can pull your own image and run locally as we did earlier nginx image.
+
+## Docker Inspect
+To inspect a running docker image, run:
+
+`$ docker inspect CONTAINER_ID/CONTAINER_NAME`
+
+## Docker Logs
+To see the log, run:
+`$ docker logs CONTAINER_ID/NAME`
+To get the live logs or follow, run:
+`$ docker logs -f CONTAINER_ID`
+
+To see all the commands, run:
+`$ docker logs --help`
+
+## Docker Exec
+to login to the container machine, run:
+`$ docker exec -it 2383adb04350 /bin/bash` or `$ docker exec -it container_id /bin/sh`
+if you do not find the bash, inspect the container then find cmd
+
