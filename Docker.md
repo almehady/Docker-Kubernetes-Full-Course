@@ -219,3 +219,5 @@ to login to the container machine, run:
 `$ docker exec -it 2383adb04350 /bin/bash` or `$ docker exec -it container_id /bin/sh`
 if you do not find the bash, inspect the container then find cmd
 
+Congratulations! You have finished Docker handson tutorial successfully. Start [Kubernetes Tutorial](Kubernetes.md).
+
