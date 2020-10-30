@@ -13,6 +13,14 @@ Docker is a software platform that allows you to build, test, and deploy applica
 ## Docker Image
 Docker image is a template for creating and environment of your choice, i.e - database, app etc. and has everything we need to run our apps including OS, Software and of course our application code.
 
+List of all docker images, run:
+
+`$ docker images`
+
+To delete a docker image, run:
+
+`$ docker image rm -f IMAGE_ID`
+
 ## Docker Container
 Package Software into Standardized Units for Development, Shipment and Deployment. Container runs instance of of an docker image.
 [Read more](https://www.docker.com/resources/what-container)
